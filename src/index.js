@@ -55,6 +55,14 @@ const thankYou = (state = [], action) => {
     return state;
 }
 
+const admin = (state = [], action) => {
+    switch(action.type){
+        case 'ADD_ADMIN':
+            return [...state, action.payload]
+    }
+    return state;
+}
+
 const feedbackStore = createStore(
     combineReducers({
         feedbackList,
@@ -63,6 +71,7 @@ const feedbackStore = createStore(
         supported,
         comments,
         thankYou,
+        admin,
     }),
     applyMiddleware(logger)
 );
