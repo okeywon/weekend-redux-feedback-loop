@@ -5,11 +5,12 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 import './index.css';
 import App from './components/App/App';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 const feedbackList = (state = [], action) => {
     switch(action.type){
         case 'SET_FEEDBACK':
+            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>.', action.payload);
             return action.payload;
     }
     return state;
@@ -18,7 +19,7 @@ const feedbackList = (state = [], action) => {
 const feeling = (state = [], action) => {
     switch(action.type){
         case 'ADD_FEELING':
-            return [...state, action.payload]
+            return action.payload;
     }
     return state;
 }
@@ -77,4 +78,4 @@ const feedbackStore = createStore(
 );
 
 ReactDOM.render(<Provider store={feedbackStore}><App /></Provider>, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
