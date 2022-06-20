@@ -6,7 +6,7 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
-import Supported from '../Supported/Supported';
+import Support from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import ThankYou from '../ThankYou/ThankYou';
 import Admin from '../Admin/Admin';
@@ -46,8 +46,8 @@ function App() {
         <Route exact path="/understanding">
           <Understanding/>
         </Route>
-        <Route exact path="/supported">
-          <Supported/>
+        <Route exact path="/support">
+          <Support/>
         </Route>
         <Route exact path="/comments">
           <Comments/>

@@ -2,20 +2,20 @@ import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
-function Supported(){
+function Support(){
     const history = useHistory();
     const dispatch = useDispatch();
-    const [supported, setSupported] = useState('');
+    const [support, setSupport] = useState('');
 
     const handleSubmit = evt => {
         evt.preventDefault();
     
-        console.log('Supported', supported);
+        console.log('Support', support);
 
         dispatch({
-            type: 'ADD_SUPPORTED',
+            type: 'ADD_SUPPORT',
             payload: {
-                supported,
+                support,
             }
         });
         history.push('/comments');
@@ -27,12 +27,12 @@ function Supported(){
                 <h1 className='App-title'>Feedback!</h1>
                 <h4>Page 3 of 4</h4>
             </header>
-            <form onSubmit={handleSubmit} className="add-supported">
+            <form onSubmit={handleSubmit} className="add-support">
                 <label>How well do you feel supported?</label>
                 <input 
                 required 
-                value={supported}
-                onChange={(event) => setSupported(event.target.value)}
+                value={support}
+                onChange={(event) => setSupport(event.target.value)}
                 />
                 <button type="submit">Next</button>
             </form>
@@ -40,4 +40,4 @@ function Supported(){
     )
 }
 
-export default Supported;
+export default Support;

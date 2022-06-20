@@ -18,7 +18,7 @@ function Understanding(){
                 understanding,
             }
         });
-        history.push('/supported');
+        history.push('/support');
     }    
 
     return(

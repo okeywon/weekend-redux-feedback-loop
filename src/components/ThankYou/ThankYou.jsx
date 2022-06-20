@@ -6,28 +6,27 @@ function ThankYou(){
     const history = useHistory();
     const feeling = useSelector(store => store.feeling);
     const understanding = useSelector(store => store.understanding);
-    const supported = useSelector(store => store.supported);
+    const support = useSelector(store => store.support);
     const comments = useSelector(store => store.comments);
 
-    const returnHome = () =>{
+    const returnHome = () => {
         submitFeedback();
             history.push('/');
         }
 
-    const submitFeedback= () =>{
+    const submitFeedback= () => {
     
-        axios.post({
+        axios({
             method: 'POST', 
             url:'/api/feedback', 
             data: {
-                feeling,
-                understanding,
-                supported,
-                comments,
+                feeling: feeling.feeling,
+                understanding: understanding.understanding,
+                support: support.support,
+                comments: comments.comments,
             }
         }).then (res =>{
-            console.log('in POST success', res);
-            displayFeedback();                                                                                                                                                                  izzas();
+            console.log('in POST success', res);                                                                                                                                                                izzas();
         })
         .catch(err=>{
             console.log('error in POST at ThankYou', err);

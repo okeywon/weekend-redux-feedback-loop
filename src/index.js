@@ -27,15 +27,15 @@ const feeling = (state = [], action) => {
 const understanding = (state = [], action) => {
     switch(action.type){
         case 'ADD_UNDERSTANDING':
-            return [...state, action.payload]
+            return action.payload;
     }
     return state;
 }
 
-const supported = (state = [], action) => {
+const support = (state = [], action) => {
     switch(action.type){
-        case 'ADD_SUPPORTED':
-            return [...state, action.payload]
+        case 'ADD_SUPPORT':
+            return action.payload;
     }
     return state;
 }
@@ -43,7 +43,7 @@ const supported = (state = [], action) => {
 const comments = (state = [], action) => {
     switch(action.type){
         case 'ADD_COMMENTS':
-            return [...state, action.payload]
+            return action.payload;
     }
     return state;
 }
@@ -51,7 +51,7 @@ const comments = (state = [], action) => {
 const thankYou = (state = [], action) => {
     switch(action.type){
         case 'ADD_THANK_YOU':
-            return [...state, action.payload]
+            return action.payload
     }
     return state;
 }
@@ -69,7 +69,7 @@ const feedbackStore = createStore(
         feedbackList,
         feeling,
         understanding,
-        supported,
+        support,
         comments,
         thankYou,
         admin,
