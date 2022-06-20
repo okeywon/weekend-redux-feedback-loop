@@ -30,13 +30,13 @@ function ThankYou(){
             displayFeedback();                                                                                                                                                                  izzas();
         })
         .catch(err=>{
-            console.log('error in POST', err);
+            console.log('error in POST at ThankYou', err);
         });
     }
 
     return(
         <div>
-            <h5>Feedback Submitted!</h5>
+            <h4>Feedback Submitted!</h4>
             <button onClick={returnHome}>Leave New Feedback</button>
         </div>
     );

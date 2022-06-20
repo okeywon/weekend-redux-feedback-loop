@@ -10,7 +10,7 @@ import App from './components/App/App';
 const feedbackList = (state = [], action) => {
     switch(action.type){
         case 'SET_FEEDBACK':
-            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>.', action.payload);
+            // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>.', action.payload);
             return action.payload;
     }
     return state;

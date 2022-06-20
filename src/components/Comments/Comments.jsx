@@ -1,8 +1,9 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 function Comments(){
+    const history = useHistory();
     const dispatch = useDispatch();
     const [comments, setComments] = useState('');
 
@@ -17,12 +18,15 @@ function Comments(){
                 comments,
             }
         });
+        history.push('/thankYou');
     }    
 
     return(
         <div>
-            <h2>FeedBack!</h2>
-            <h5>Page 4 of 4</h5>
+            <header className='App-header'>
+                <h1 className='App-title'>Feedback!</h1>
+                <h4>Page 4 of 4</h4>
+            </header>
             <form onSubmit={handleSubmit} className="add-comments">
                 <label>Do you have any comments to share?</label>
                 <input 
@@ -30,10 +34,8 @@ function Comments(){
                 value={comments}
                 onChange={(event) => setComments(event.target.value)}
                 />
+                <button type="submit">Next</button>
             </form>
-            <Link to='/thankYou'>
-            <button type="submit">Next</button>
-            </Link>
         </div>
     )
 }

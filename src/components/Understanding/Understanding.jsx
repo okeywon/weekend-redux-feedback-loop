@@ -1,8 +1,9 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 function Understanding(){
+    const history = useHistory();
     const dispatch = useDispatch();
     const [understanding, setUnderstanding] = useState('');
 
@@ -17,12 +18,15 @@ function Understanding(){
                 understanding,
             }
         });
+        history.push('/supported');
     }    
 
     return(
         <div>
-            <h2>FeedBack!</h2>
-            <h5>Page 2 of 4</h5>
+            <header className='App-header'>
+                <h1 className='App-title'>Feedback!</h1>
+                <h4>Page 2 of 4</h4>
+            </header>
             <form onSubmit={handleSubmit} className="add-understanding">
                 <label>How well are you understanding the content?</label>
                 <input 
@@ -30,10 +34,8 @@ function Understanding(){
                 value={understanding}
                 onChange={(event) => setUnderstanding(event.target.value)}
                 />
+                <button type="submit">Next</button>
             </form>
-            <Link to='/supported'>
-            <button type="submit">Next</button>
-            </Link>
         </div>
     )
 }
